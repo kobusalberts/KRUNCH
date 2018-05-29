@@ -7,6 +7,7 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
+// ReSharper disable All
 namespace Krunch.DomainLogic
 {
     using System;
@@ -16,7 +17,7 @@ namespace Krunch.DomainLogic
     /// <summary>
     ///     The krunch processor.
     /// </summary>
-    public class KrunchProcessor
+    public static class KrunchProcessor
     {
         /// <summary>
         ///     The max length.
@@ -44,7 +45,7 @@ namespace Krunch.DomainLogic
         /// <returns>
         ///     The <see cref="string" /> that is krunched.
         /// </returns>
-        public static string Krunch(string inputString)
+        public static string Krunch(this string inputString)
         {
             if (inputString.Length < minLength)
             {
