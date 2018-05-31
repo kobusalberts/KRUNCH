@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DomainLogic\KRUNCH.DomainLogic.csproj" />
+    <ProjectReference Include="..\KRUNCH.DomainLogic\KRUNCH.DomainLogic.csproj" />
   </ItemGroup>
 
 </Project>

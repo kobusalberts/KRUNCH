@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DomainLogic\KRUNCH.DomainLogic.csproj" />
+    <ProjectReference Include="..\KRUNCH.DomainLogic\KRUNCH.DomainLogic.csproj" />
   </ItemGroup>
 
 </Project>

@@ -72,6 +72,11 @@ namespace Krunch.DomainLogic
                 }
             }
 
+            if (outputChars.Count == 0)
+            {
+                throw new Exception("No valid output for the string found. Either you input is not uppercase or contains invalid chars.");
+            }
+
             return new string(outputChars.ToArray());
         }
 
@@ -117,6 +122,7 @@ namespace Krunch.DomainLogic
         /// </returns>
         private static bool IsNotYetMentioned(char character, char[] outputChars)
         {
+            
             //// Skip the spaces
             if (character == ' ' && outputChars.Last() != ' ')
             {
@@ -128,7 +134,7 @@ namespace Krunch.DomainLogic
 
         public static string Save(string result)
         {
-            var filepath = Path.Combine(fileOutputDir, DateTime.Now.Ticks.ToString());
+            var filepath = string.Format("{0}.txt",Path.Combine(fileOutputDir, DateTime.Now.Ticks.ToString()));
             if (File.Exists(filepath))
             {
                 throw new Exception($"File already exist:{filepath}");
