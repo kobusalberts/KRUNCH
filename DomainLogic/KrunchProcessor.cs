@@ -12,6 +12,7 @@ namespace Krunch.DomainLogic
 {
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Linq;
 
     /// <summary>
@@ -35,6 +36,8 @@ namespace Krunch.DomainLogic
         private static readonly char[] validChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ .,?".ToCharArray();
 
         private static readonly char[] strippedChars = "AEOIU".ToCharArray();
+
+        private static string fileOutputDir = "C:\\temp";
 
         /// <summary>
         ///     The krunch.
@@ -121,6 +124,18 @@ namespace Krunch.DomainLogic
             }
 
             return Array.IndexOf(outputChars, character) < 0;
+        }
+
+        public static string Save(string result)
+        {
+            var filepath = Path.Combine(fileOutputDir, DateTime.Now.Ticks.ToString());
+            if (File.Exists(filepath))
+            {
+                throw new Exception($"File already exist:{filepath}");
+            }
+
+            File.WriteAllText(filepath, result);
+            return filepath;
         }
     }
 }
